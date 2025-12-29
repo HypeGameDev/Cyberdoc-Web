@@ -7,7 +7,8 @@ interface RouteGuardProps {
 }
 
 // Please add the pages that can be accessed without logging in to PUBLIC_ROUTES.
-const PUBLIC_ROUTES = ['/login', '/403', '/404',"/"];
+const PUBLIC_ROUTES = ['/login', '/403', '/404', '/', '/services', '/booking', '/reviews', '/contact'];
+const ADMIN_ROUTES = ['/admin', '/admin/appointments', '/admin/reviews', '/admin/content', '/admin/users'];
 
 function matchPublicRoute(path: string, patterns: string[]) {
   return patterns.some(pattern => {
@@ -20,7 +21,7 @@ function matchPublicRoute(path: string, patterns: string[]) {
 }
 
 export function RouteGuard({ children }: RouteGuardProps) {
-  const { user, loading } = useAuth();
+  const { user, profile, loading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,11 +29,17 @@ export function RouteGuard({ children }: RouteGuardProps) {
     if (loading) return;
 
     const isPublic = matchPublicRoute(location.pathname, PUBLIC_ROUTES);
+    const isAdminRoute = matchPublicRoute(location.pathname, ADMIN_ROUTES);
 
     if (!user && !isPublic) {
       navigate('/login', { state: { from: location.pathname }, replace: true });
     }
-  }, [user, loading, location.pathname, navigate]);
+
+    // Check admin access
+    if (isAdminRoute && user && profile?.role !== 'admin') {
+      navigate('/', { replace: true });
+    }
+  }, [user, profile, loading, location.pathname, navigate]);
 
   if (loading) {
     return (

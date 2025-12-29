@@ -11,7 +11,7 @@ export async function getProfile(userId: string): Promise<Profile | null> {
     .maybeSingle();
 
   if (error) {
-    console.error('获取用户信息失败:', error);
+    console.error('Error fetching user profile:', error);
     return null;
   }
   return data;
@@ -85,6 +85,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { error } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          data: {
+            username,
+          },
+        },
       });
 
       if (error) throw error;
@@ -101,7 +106,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, profile, loading, signInWithUsername, signUpWithUsername, signOut, refreshProfile }}>
+    <AuthContext.Provider value={{ user, profile, loading, signIn: signInWithUsername, signUp: signUpWithUsername, signOut, refreshProfile }}>
       {children}
     </AuthContext.Provider>
   );
