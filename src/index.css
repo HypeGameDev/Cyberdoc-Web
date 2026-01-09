@@ -88,6 +88,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-slate-950 text-foreground;
+    background: linear-gradient(to bottom, #020617, #0f172a);
+    min-height: 100vh;
   }
 }
