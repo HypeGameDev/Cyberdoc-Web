@@ -58,7 +58,7 @@ export default function ManageSettings() {
     if (!phoneRegex.test(whatsappNumber.replace(/\s/g, ''))) {
       toast({
         title: 'Error',
-        description: 'Please enter a valid phone number with country code (e.g., +919952274058)',
+        description: 'Please enter a valid phone number with country code (e.g., +919788407007)',
         variant: 'destructive',
       });
       return;
@@ -118,7 +118,7 @@ export default function ManageSettings() {
               <Input
                 id="whatsapp-number"
                 type="tel"
-                placeholder="+919952274058"
+                placeholder="+919788407007"
                 value={whatsappNumber}
                 onChange={(e) => setWhatsappNumber(e.target.value)}
                 className="flex-1"

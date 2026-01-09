@@ -28,7 +28,7 @@ const getAIResponse = (userMessage: string): string => {
 
   // Pricing
   if (message.includes('price') || message.includes('cost') || message.includes('charge') || message.includes('fee')) {
-    return "Our pricing varies based on the service required. We offer competitive rates starting from affordable prices. For accurate pricing, please:\n\n1. Visit our Services page\n2. Book an appointment for a free diagnosis\n3. Call us at +91 99522 74058\n\nWe provide transparent pricing with no hidden charges!";
+    return "Our pricing varies based on the service required. We offer competitive rates starting from affordable prices. For accurate pricing, please:\n\n1. Visit our Services page\n2. Book an appointment for a free diagnosis\n3. Call us at +91 97884 07007\n\nWe provide transparent pricing with no hidden charges!";
   }
 
   // Appointment/Booking
@@ -48,7 +48,7 @@ const getAIResponse = (userMessage: string): string => {
 
   // Contact
   if (message.includes('contact') || message.includes('phone') || message.includes('call') || message.includes('whatsapp')) {
-    return "You can reach us at:\n\n📞 Phone: +91 99522 74058\n💬 WhatsApp: Available on the same number\n📧 Visit our Contact page for more options\n\nFeel free to call or message us anytime during business hours!";
+    return "You can reach us at:\n\n📞 Phone: +91 97884 07007\n💬 WhatsApp: Available on the same number\n📧 Visit our Contact page for more options\n\nFeel free to call or message us anytime during business hours!";
   }
 
   // Data Recovery
@@ -72,7 +72,7 @@ const getAIResponse = (userMessage: string): string => {
   }
 
   // Default response
-  return "I'm here to help! You can ask me about:\n\n• Our services and repairs\n• Pricing and costs\n• Booking appointments\n• Location and contact info\n• Business hours\n• Data recovery\n• Doorstep service\n\nOr feel free to call us at +91 99522 74058 for immediate assistance!";
+  return "I'm here to help! You can ask me about:\n\n• Our services and repairs\n• Pricing and costs\n• Booking appointments\n• Location and contact info\n• Business hours\n• Data recovery\n• Doorstep service\n\nOr feel free to call us at +91 97884 07007 for immediate assistance!";
 };
 
 export default function AIHelpAssistant() {

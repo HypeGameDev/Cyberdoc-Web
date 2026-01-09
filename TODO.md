@@ -41,6 +41,12 @@
   - [x] Update signup success message
   - [x] Remove verification link message from signup form
   - [x] Clear form fields after successful signup
+- [x] Step 22: Update phone and WhatsApp number (Completed)
+  - [x] Update ContactPage phone number to +91 97884 07007
+  - [x] Update Footer phone number
+  - [x] Update AI Help Assistant responses with new number
+  - [x] Update ManageSettings placeholder examples
+  - [x] Update database settings with new WhatsApp number
 
 ## Notes
 - Admin dashboard requires authentication
@@ -63,6 +69,7 @@
 - Location: Saravanampatti, Coimbatore, Tamil Nadu
 - Google Maps: https://maps.app.goo.gl/xk1g9JFi1Jin1kWy8
 - Business Hours: Mon-Sat 9am-9pm, Lunch 1-2pm, Sunday Closed
+- Contact Number: +91 97884 07007 (Phone & WhatsApp)
 - Login button is visible at top right of header for all users
 - 1000+ reviews displayed from JustDial with 4.9/5 rating
 - JustDial link: https://www.justdial.com/Coimbatore/Cyberdoctor-Computer-And-Laptop-Service-Center-Near-Sathy-Main-Road-Saravanampatti/0422PX422-X422-170529204541-R6W2_BZDET/reviews

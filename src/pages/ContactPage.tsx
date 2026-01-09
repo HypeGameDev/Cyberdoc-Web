@@ -11,7 +11,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
-  const [whatsappNumber, setWhatsappNumber] = useState('+919952274058');
+  const [whatsappNumber, setWhatsappNumber] = useState('+919788407007');
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -61,7 +61,7 @@ export default function ContactPage() {
   };
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+919952274058';
+    window.location.href = 'tel:+919788407007';
   };
 
   const handleWhatsAppClick = () => {
@@ -99,7 +99,7 @@ export default function ContactPage() {
                 <p className="text-muted-foreground mb-3">Call us directly</p>
                 <Button variant="outline" className="w-full" onClick={handleCallClick}>
                   <Phone className="mr-2 h-4 w-4" />
-                  +91 99522 74058
+                  +91 97884 07007
                 </Button>
               </CardContent>
             </Card>
