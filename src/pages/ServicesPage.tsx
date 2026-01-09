@@ -22,6 +22,11 @@ export default function ServicesPage() {
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
 
+  const handleWhatsAppClick = () => {
+    const whatsappNumber = '919788407007';
+    window.open(`https://wa.me/${whatsappNumber}?text=Hi, I would like to inquire about your computer repair services`, '_blank');
+  };
+
   useEffect(() => {
     loadServices();
   }, []);
@@ -185,10 +190,10 @@ export default function ServicesPage() {
             <CardContent className="p-8 xl:p-12 text-center space-y-6">
               <h2 className="text-2xl xl:text-4xl font-bold">Need a Repair?</h2>
               <p className="text-lg xl:text-xl opacity-90 max-w-2xl mx-auto">
-                Book an appointment now and get your device fixed by our expert technicians
+                Contact us on WhatsApp now and get your device fixed by our expert technicians
               </p>
-              <Button size="lg" variant="secondary" asChild>
-                <Link to="/booking">Book Appointment</Link>
+              <Button size="lg" variant="secondary" onClick={handleWhatsAppClick}>
+                Message on WhatsApp
               </Button>
             </CardContent>
           </Card>

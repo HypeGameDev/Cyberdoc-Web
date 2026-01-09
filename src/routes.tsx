@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
-import BookingPage from './pages/BookingPage';
+import AboutPage from './pages/AboutPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ContactPage from './pages/ContactPage';
 import LoginPage from './pages/LoginPage';
@@ -36,9 +36,9 @@ const routes: RouteConfig[] = [
     visible: true,
   },
   {
-    name: 'Book Appointment',
-    path: '/booking',
-    element: <BookingPage />,
+    name: 'About Us',
+    path: '/about',
+    element: <AboutPage />,
     visible: true,
   },
   {

@@ -141,21 +141,21 @@ export default function ReviewsPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-background py-12 xl:py-16">
+      <section className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 py-12 xl:py-16">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <div className="flex items-center justify-center gap-2 flex-wrap">
-              <Badge variant="secondary">Customer Reviews</Badge>
-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/30">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">Customer Reviews</Badge>
+              <Badge variant="outline" className="bg-white/20 text-white border-white/30">
                 1000+ Reviews on JustDial
               </Badge>
             </div>
-            <h1 className="text-3xl xl:text-5xl font-bold">What Our Customers Say</h1>
+            <h1 className="text-3xl xl:text-5xl font-bold text-white">What Our Customers Say</h1>
             <div className="flex items-center justify-center space-x-2 text-2xl">
               <div className="flex">{renderStars(4.9)}</div>
-              <span className="font-bold">4.9/5</span>
+              <span className="font-bold text-white">4.9/5</span>
             </div>
-            <p className="text-base xl:text-xl text-muted-foreground">
+            <p className="text-base xl:text-xl text-white/90">
               Based on 1000+ reviews from satisfied customers across Coimbatore
             </p>
             <div className="pt-2">
@@ -163,7 +163,7 @@ export default function ReviewsPage() {
                 href="https://www.justdial.com/Coimbatore/Cyberdoctor-Computer-And-Laptop-Service-Center-Near-Sathy-Main-Road-Saravanampatti/0422PX422-X422-170529204541-R6W2_BZDET/reviews"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-primary hover:underline"
+                className="text-sm text-white hover:underline font-semibold"
               >
                 View all reviews on JustDial →
               </a>
@@ -173,7 +173,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* Reviews Grid */}
-      <section className="py-12 xl:py-20">
+      <section className="py-12 xl:py-20 bg-gradient-to-b from-orange-50 via-pink-50 to-purple-50 dark:from-orange-950/20 dark:via-pink-950/20 dark:to-purple-950/20">
         <div className="container px-4">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-bold">Customer Testimonials</h2>

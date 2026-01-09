@@ -6,6 +6,11 @@ import { CheckCircle, Wrench, Cpu, HardDrive, Monitor, Star } from 'lucide-react
 import HexagonalBackground from '@/components/ui/HexagonalBackground';
 
 export default function HomePage() {
+  const handleWhatsAppClick = () => {
+    const whatsappNumber = '919788407007';
+    window.open(`https://wa.me/${whatsappNumber}?text=Hi, I would like to inquire about your computer repair services`, '_blank');
+  };
+
   const services = [
     {
       icon: <Monitor className="h-8 w-8 text-primary" />,
@@ -59,8 +64,8 @@ export default function HomePage() {
               17+ years of trusted service. Professional repairs, genuine parts, and doorstep service available.
             </p>
             <div className="flex flex-col xl:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" asChild className="bg-cyan-500 hover:bg-cyan-600 text-white shadow-lg shadow-cyan-500/50">
-                <Link to="/booking">Book a Repair</Link>
+              <Button size="lg" onClick={handleWhatsAppClick} className="bg-cyan-500 hover:bg-cyan-600 text-white shadow-lg shadow-cyan-500/50">
+                Contact on WhatsApp
               </Button>
               <Button size="lg" variant="outline" asChild className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10">
                 <Link to="/services">View Services</Link>
@@ -164,12 +169,12 @@ export default function HomePage() {
             <CardContent className="p-8 xl:p-12 text-center space-y-6">
               <h2 className="text-2xl xl:text-4xl font-bold">Ready to Fix Your Computer?</h2>
               <p className="text-lg xl:text-xl opacity-90 max-w-2xl mx-auto">
-                Book an appointment today and get your device repaired by our expert technicians. 
+                Contact us on WhatsApp today and get your device repaired by our expert technicians. 
                 In-store or doorstep service available.
               </p>
               <div className="flex flex-col xl:flex-row gap-4 justify-center pt-4">
-                <Button size="lg" variant="secondary" asChild className="bg-white text-cyan-600 hover:bg-cyan-50">
-                  <Link to="/booking">Book Appointment</Link>
+                <Button size="lg" variant="secondary" onClick={handleWhatsAppClick} className="bg-white text-cyan-600 hover:bg-cyan-50">
+                  Message on WhatsApp
                 </Button>
                 <Button size="lg" variant="outline" className="bg-transparent border-white hover:bg-white/10" asChild>
                   <Link to="/contact">Contact Us</Link>

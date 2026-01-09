@@ -28,12 +28,12 @@ const getAIResponse = (userMessage: string): string => {
 
   // Pricing
   if (message.includes('price') || message.includes('cost') || message.includes('charge') || message.includes('fee')) {
-    return "Our pricing varies based on the service required. We offer competitive rates starting from affordable prices. For accurate pricing, please:\n\n1. Visit our Services page\n2. Book an appointment for a free diagnosis\n3. Call us at +91 97884 07007\n\nWe provide transparent pricing with no hidden charges!";
+    return "Our pricing varies based on the service required. We offer competitive rates starting from affordable prices. For accurate pricing, please:\n\n1. Visit our Services page\n2. Contact us on WhatsApp for a free diagnosis\n3. Call us at +91 97884 07007\n\nWe provide transparent pricing with no hidden charges!";
   }
 
   // Appointment/Booking
   if (message.includes('appointment') || message.includes('book') || message.includes('schedule')) {
-    return "Booking an appointment is easy! You can:\n\n1. Click on 'Book Appointment' in the menu\n2. Choose your preferred service\n3. Select date and time (9 AM - 9 PM, Mon-Sat)\n4. Choose in-store or doorstep service\n\nWe're available Monday to Saturday, with lunch break from 1-2 PM.";
+    return "Getting service is easy! You can:\n\n1. Message us on WhatsApp: +91 97884 07007\n2. Call us directly during business hours\n3. Visit our Contact page for more options\n\nWe're available Monday to Saturday, 9 AM - 9 PM (lunch break 1-2 PM). Choose in-store or doorstep service!";
   }
 
   // Location/Address
@@ -43,7 +43,7 @@ const getAIResponse = (userMessage: string): string => {
 
   // Timing/Hours
   if (message.includes('time') || message.includes('hour') || message.includes('open') || message.includes('close')) {
-    return "Our service hours are:\n\n🕐 Monday - Saturday: 9:00 AM - 9:00 PM\n🍽️ Lunch Break: 1:00 PM - 2:00 PM\n🚫 Sunday: Closed\n\nYou can book appointments for any available time slot during our working hours!";
+    return "Our service hours are:\n\n🕐 Monday - Saturday: 9:00 AM - 9:00 PM\n🍽️ Lunch Break: 1:00 PM - 2:00 PM\n🚫 Sunday: Closed\n\nYou can contact us on WhatsApp or call during our working hours!";
   }
 
   // Contact
@@ -53,12 +53,12 @@ const getAIResponse = (userMessage: string): string => {
 
   // Data Recovery
   if (message.includes('data') || message.includes('recover') || message.includes('lost file')) {
-    return "We specialize in professional data recovery services! We can recover data from:\n\n• Damaged hard drives\n• Corrupted storage devices\n• Formatted drives\n• Failed SSDs\n\nOur success rate is high, and we handle your data with complete confidentiality. Book an appointment for a free assessment!";
+    return "We specialize in professional data recovery services! We can recover data from:\n\n• Damaged hard drives\n• Corrupted storage devices\n• Formatted drives\n• Failed SSDs\n\nOur success rate is high, and we handle your data with complete confidentiality. Contact us on WhatsApp for a free assessment!";
   }
 
   // Doorstep Service
   if (message.includes('doorstep') || message.includes('home service') || message.includes('pickup')) {
-    return "Yes! We offer convenient doorstep service. Our technician will:\n\n1. Come to your location\n2. Diagnose the issue\n3. Provide on-site repair (if possible)\n4. Or pick up the device for workshop repair\n\nSelect 'Doorstep Service' when booking your appointment!";
+    return "Yes! We offer convenient doorstep service. Our technician will:\n\n1. Come to your location\n2. Diagnose the issue\n3. Provide on-site repair (if possible)\n4. Or pick up the device for workshop repair\n\nContact us on WhatsApp or call to schedule doorstep service!";
   }
 
   // Experience/About
@@ -72,7 +72,7 @@ const getAIResponse = (userMessage: string): string => {
   }
 
   // Default response
-  return "I'm here to help! You can ask me about:\n\n• Our services and repairs\n• Pricing and costs\n• Booking appointments\n• Location and contact info\n• Business hours\n• Data recovery\n• Doorstep service\n\nOr feel free to call us at +91 97884 07007 for immediate assistance!";
+  return "I'm here to help! You can ask me about:\n\n• Our services and repairs\n• Pricing and costs\n• Contact information\n• Location and directions\n• Business hours\n• Data recovery\n• Doorstep service\n\nOr feel free to call us at +91 97884 07007 for immediate assistance!";
 };
 
 export default function AIHelpAssistant() {
