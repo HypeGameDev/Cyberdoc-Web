@@ -15,20 +15,15 @@
 - [x] Step 12: Update header styling and add email verification (Completed)
 - [x] Step 13: Add About Us section with image slideshow (Completed)
 - [x] Step 14: Implement appointment slot management and AI assistant (Completed)
-  - [x] Update appointment timings to 1-hour slots (9am-9pm)
-  - [x] Add lunch break exclusion (1-2pm)
-  - [x] Create blocked_slots database table
-  - [x] Create settings database table
-  - [x] Add API functions for blocked slots and settings
-  - [x] Update BookingPage with time slot dropdown
-  - [x] Implement blocked slot checking in booking
-  - [x] Create ManageSlots admin page
-  - [x] Create ManageSettings admin page
-  - [x] Add admin navigation for new pages
-  - [x] Create AI Help Assistant component
-  - [x] Integrate AI Assistant into application
-  - [x] Make WhatsApp number configurable by admin
-  - [x] Update ContactPage to use dynamic WhatsApp number
+- [x] Step 15: Fix React import error in types/index.ts (Completed)
+- [x] Step 16: Update location and business hours (Completed)
+  - [x] Add Google Maps link (https://maps.app.goo.gl/xk1g9JFi1Jin1kWy8)
+  - [x] Update Google Maps embed in ContactPage
+  - [x] Add "Open in Google Maps" link
+  - [x] Update business hours to 9am-9pm (Mon-Sat)
+  - [x] Add lunch break information (1-2pm)
+  - [x] Update Footer with correct hours
+  - [x] Update AI Assistant with correct hours
 
 ## Notes
 - Admin dashboard requires authentication
@@ -48,3 +43,6 @@
 - AI Help Assistant provides instant answers to common questions
 - WhatsApp number is configurable through admin settings
 - Time slots: 09:00-10:00, 10:00-11:00, 11:00-12:00, 12:00-13:00, 14:00-15:00, 15:00-16:00, 16:00-17:00, 17:00-18:00, 18:00-19:00, 19:00-20:00, 20:00-21:00
+- Location: Saravanampatti, Coimbatore, Tamil Nadu
+- Google Maps: https://maps.app.goo.gl/xk1g9JFi1Jin1kWy8
+- Business Hours: Mon-Sat 9am-9pm, Lunch 1-2pm, Sunday Closed

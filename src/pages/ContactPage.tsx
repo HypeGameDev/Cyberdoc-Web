@@ -147,8 +147,9 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Mon-Sat: 9:00 AM - 8:00 PM<br />
-                  Sun: 10:00 AM - 6:00 PM
+                  Mon-Sat: 9:00 AM - 9:00 PM<br />
+                  Lunch Break: 1:00 PM - 2:00 PM<br />
+                  Sunday: Closed
                 </p>
               </CardContent>
             </Card>
@@ -229,15 +230,26 @@ export default function ContactPage() {
                   </p>
                   <div className="aspect-video w-full rounded-lg overflow-hidden border">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.8826!2d77.0!3d11.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAwJzAwLjAiTiA3N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0!2d76.99!3d11.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858e0a0a0a0a0%3A0x0!2zMTHCsDAxJzQ4LjAiTiA3NsKwNTknMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Cyberdoctor Location"
+                      title="Cyberdoctor Location - Saravanampatti, Coimbatore"
                     />
+                  </div>
+                  <div className="mt-4">
+                    <a
+                      href="https://maps.app.goo.gl/xk1g9JFi1Jin1kWy8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline text-sm flex items-center"
+                    >
+                      <MapPin className="h-4 w-4 mr-1" />
+                      Open in Google Maps
+                    </a>
                   </div>
                 </CardContent>
               </Card>

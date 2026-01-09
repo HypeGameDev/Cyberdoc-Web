@@ -43,7 +43,7 @@ const getAIResponse = (userMessage: string): string => {
 
   // Timing/Hours
   if (message.includes('time') || message.includes('hour') || message.includes('open') || message.includes('close')) {
-    return "Our service hours are:\n\n🕐 Monday - Saturday: 9:00 AM - 9:00 PM\n🍽️ Lunch Break: 1:00 PM - 2:00 PM\n\nWe're closed on Sundays. You can book appointments for any available time slot!";
+    return "Our service hours are:\n\n🕐 Monday - Saturday: 9:00 AM - 9:00 PM\n🍽️ Lunch Break: 1:00 PM - 2:00 PM\n🚫 Sunday: Closed\n\nYou can book appointments for any available time slot during our working hours!";
   }
 
   // Contact
