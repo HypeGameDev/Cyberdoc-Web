@@ -36,6 +36,11 @@
   - [x] Remove About Us section with image carousel
   - [x] Remove galleryImages array
   - [x] Remove unused Carousel component imports
+- [x] Step 21: Disable email verification (Completed)
+  - [x] Disable email verification in Supabase
+  - [x] Update signup success message
+  - [x] Remove verification link message from signup form
+  - [x] Clear form fields after successful signup
 
 ## Notes
 - Admin dashboard requires authentication
@@ -48,8 +53,8 @@
 - Logo added to header and login page with "CyberDoctor" text
 - Dark cyber theme with animated hexagonal grid background
 - Header now has dark blue background (slate-900) with white text
-- Email verification enabled - users must verify email before login
-- About Us section includes 6-image carousel showcasing service center
+- Email verification DISABLED - users can sign up and login immediately without email confirmation
+- Slideshow/carousel section removed from homepage
 - Appointment slots: 9am-9pm with 1-hour intervals, lunch break 1-2pm
 - Admin can block specific time slots for certain dates
 - AI Help Assistant provides instant answers to common questions

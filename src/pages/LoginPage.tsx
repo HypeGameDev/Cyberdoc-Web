@@ -135,9 +135,13 @@ export default function LoginPage() {
       });
     } else {
       toast({
-        title: 'Check Your Email',
-        description: 'We sent you a verification link. Please check your email to verify your account.',
+        title: 'Account Created Successfully',
+        description: 'You can now log in with your credentials.',
       });
+      setSignupUsername('');
+      setSignupEmail('');
+      setSignupPassword('');
+      setConfirmPassword('');
     }
   };
 
@@ -244,9 +248,6 @@ export default function LoginPage() {
                       disabled={isLoading}
                       required
                     />
-                    <p className="text-xs text-muted-foreground">
-                      We'll send you a verification link
-                    </p>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="signup-password">Password</Label>
