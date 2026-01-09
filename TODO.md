@@ -24,6 +24,10 @@
   - [x] Add JustDial link to reviews page
   - [x] Update HomePage to show "1000+ reviews"
   - [x] Display 4.9/5 rating consistently
+- [x] Step 18: Replace slideshow images with real Cyberdoctor banner (Completed)
+  - [x] Replace all 6 AI-generated images with actual Cyberdoctor banner
+  - [x] Update image URLs to use provided banner image
+  - [x] Update alt text with relevant descriptions
 
 ## Notes
 - Admin dashboard requires authentication

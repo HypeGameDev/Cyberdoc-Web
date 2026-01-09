@@ -47,28 +47,28 @@ export default function HomePage() {
 
   const galleryImages = [
     {
-      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/7c33059d-0dbd-408f-944f-e541ec29b44a.jpg',
-      alt: 'Computer repair service center workshop with professional technicians',
+      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
+      alt: 'Cyberdoctor Computer and Laptop Service Center - Sales and Service at Your Doorstep',
     },
     {
-      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/fe1b7edc-c44d-4cd2-a327-939c975bcf65.jpg',
-      alt: 'Technician repairing laptop computer',
+      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
+      alt: 'Computer, Laptop, Tablet, Gadgets Sales and Service - Cyberdoctor Saravanampatti',
     },
     {
-      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/39a6087d-e824-4290-a3da-c4d2a9b8abb0.jpg',
-      alt: 'Laptop motherboard chip level repair and BGA soldering',
+      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
+      alt: 'Expert Computer Repair Services - Contact 96883 07007 or 99420 90081',
     },
     {
-      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/639bc92d-0a89-45b2-bcb6-05cdea20ad69.jpg',
-      alt: 'Computer hardware diagnostic testing equipment',
+      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
+      alt: 'Cyberdoctor - 115A Sathy Main Road, Visuwasapuram, Coimbatore',
     },
     {
-      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/b5f8c369-1c43-4de7-8a4b-91050e69f458.jpg',
-      alt: 'Data recovery and hard drive repair services',
+      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
+      alt: 'Professional Computer and Laptop Sales & Service Center',
     },
     {
-      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/595362cd-3f45-44a4-9a61-91a86ad57113.jpg',
-      alt: 'Electronics repair workshop with professional tools',
+      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
+      alt: 'Cyberdoctor - Your Trusted Computer Service Partner in Coimbatore',
     },
   ];
 
