@@ -136,7 +136,11 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-block">
-            <h1 className="text-3xl font-bold text-primary">Cyberdoctor</h1>
+            <img 
+              src="/cyberdoctor-logo.png" 
+              alt="Cyberdoctor Computer & Laptop Service Center" 
+              className="h-24 w-auto mx-auto mb-2"
+            />
           </Link>
           <p className="text-muted-foreground mt-2">Computer & Laptop Service Center</p>
         </div>

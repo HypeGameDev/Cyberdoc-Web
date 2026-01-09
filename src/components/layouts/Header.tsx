@@ -36,9 +36,11 @@ export default function Header() {
       <nav className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <div className="flex items-center">
-            <span className="text-xl xl:text-2xl font-bold text-primary">Cyberdoctor</span>
-          </div>
+          <img 
+            src="/cyberdoctor-logo.png" 
+            alt="Cyberdoctor Computer & Laptop Service Center" 
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
