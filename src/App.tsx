@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import IntersectObserver from '@/components/common/IntersectObserver';
 import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
+import AIHelpAssistant from '@/components/common/AIHelpAssistant';
 
 import routes from './routes';
 
@@ -64,6 +65,7 @@ const App: React.FC = () => {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>
+          <AIHelpAssistant />
           <Toaster />
         </RouteGuard>
       </AuthProvider>

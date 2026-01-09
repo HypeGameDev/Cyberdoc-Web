@@ -9,14 +9,32 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
-import { getServices, createAppointment } from '@/db/api';
+import { getServices, createAppointment, getBlockedSlotsByDate } from '@/db/api';
 import type { Service, LocationType } from '@/types/types';
 import { Calendar, Clock, MapPin, CheckCircle } from 'lucide-react';
+
+// Define time slots from 9am to 9pm with 1-hour intervals, excluding 1-2pm lunch break
+const TIME_SLOTS = [
+  '09:00 AM - 10:00 AM',
+  '10:00 AM - 11:00 AM',
+  '11:00 AM - 12:00 PM',
+  '12:00 PM - 01:00 PM',
+  // Lunch break 1-2pm
+  '02:00 PM - 03:00 PM',
+  '03:00 PM - 04:00 PM',
+  '04:00 PM - 05:00 PM',
+  '05:00 PM - 06:00 PM',
+  '06:00 PM - 07:00 PM',
+  '07:00 PM - 08:00 PM',
+  '08:00 PM - 09:00 PM',
+];
 
 export default function BookingPage() {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [blockedSlots, setBlockedSlots] = useState<string[]>([]);
+  const [availableTimeSlots, setAvailableTimeSlots] = useState<string[]>(TIME_SLOTS);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -43,6 +61,30 @@ export default function BookingPage() {
       setServices(data);
     } catch (error) {
       console.error('Error loading services:', error);
+    }
+  };
+
+  const loadBlockedSlots = async (date: string) => {
+    try {
+      const blocked = await getBlockedSlotsByDate(date);
+      const blockedTimeSlots = blocked.map(slot => slot.time_slot);
+      setBlockedSlots(blockedTimeSlots);
+      
+      // Filter available time slots
+      const available = TIME_SLOTS.filter(slot => !blockedTimeSlots.includes(slot));
+      setAvailableTimeSlots(available);
+    } catch (error) {
+      console.error('Error loading blocked slots:', error);
+      setAvailableTimeSlots(TIME_SLOTS);
+    }
+  };
+
+  const handleDateChange = (date: string) => {
+    setFormData({ ...formData, appointment_date: date, appointment_time: '' });
+    if (date) {
+      loadBlockedSlots(date);
+    } else {
+      setAvailableTimeSlots(TIME_SLOTS);
     }
   };
 
@@ -255,20 +297,38 @@ export default function BookingPage() {
                           id="appointment_date"
                           type="date"
                           value={formData.appointment_date}
-                          onChange={(e) => setFormData({ ...formData, appointment_date: e.target.value })}
+                          onChange={(e) => handleDateChange(e.target.value)}
                           min={new Date().toISOString().split('T')[0]}
                           required
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="appointment_time">Time *</Label>
-                        <Input
-                          id="appointment_time"
-                          type="time"
+                        <Label htmlFor="appointment_time">Time Slot *</Label>
+                        <Select
                           value={formData.appointment_time}
-                          onChange={(e) => setFormData({ ...formData, appointment_time: e.target.value })}
+                          onValueChange={(value) => setFormData({ ...formData, appointment_time: value })}
                           required
-                        />
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a time slot" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {availableTimeSlots.length === 0 ? (
+                              <SelectItem value="no-slots" disabled>
+                                No available slots for this date
+                              </SelectItem>
+                            ) : (
+                              availableTimeSlots.map((slot) => (
+                                <SelectItem key={slot} value={slot}>
+                                  {slot}
+                                </SelectItem>
+                              ))
+                            )}
+                          </SelectContent>
+                        </Select>
+                        {formData.appointment_date && availableTimeSlots.length === 0 && (
+                          <p className="text-sm text-destructive">All slots are booked for this date. Please choose another date.</p>
+                        )}
                       </div>
                     </div>
                   </div>

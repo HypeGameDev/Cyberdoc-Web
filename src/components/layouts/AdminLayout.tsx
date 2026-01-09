@@ -1,7 +1,7 @@
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
-import { Calendar, MessageSquare, Settings, Users, Home, Menu } from 'lucide-react';
+import { Calendar, MessageSquare, Settings, Users, Home, Menu, Ban, Cog } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 
@@ -11,6 +11,8 @@ const adminNavigation = [
   { name: 'Reviews', path: '/admin/reviews', icon: MessageSquare },
   { name: 'Content', path: '/admin/content', icon: Settings },
   { name: 'Users', path: '/admin/users', icon: Users },
+  { name: 'Manage Slots', path: '/admin/slots', icon: Ban },
+  { name: 'Settings', path: '/admin/settings', icon: Cog },
 ];
 
 export default function AdminLayout() {

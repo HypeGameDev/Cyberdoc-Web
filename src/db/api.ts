@@ -7,6 +7,8 @@ import type {
   AppointmentFormData,
   ReviewFormData,
   Profile,
+  BlockedSlot,
+  Setting,
 } from '@/types/types';
 
 // Services API
@@ -256,4 +258,97 @@ export const getStatistics = async () => {
     totalReviews: reviewsResult.count || 0,
     totalServices: servicesResult.count || 0,
   };
+};
+
+// Blocked Slots API
+export const getBlockedSlots = async (): Promise<BlockedSlot[]> => {
+  const { data, error } = await supabase
+    .from('blocked_slots')
+    .select('*')
+    .order('date', { ascending: true })
+    .order('time_slot', { ascending: true });
+
+  if (error) throw error;
+  return Array.isArray(data) ? data : [];
+};
+
+export const getBlockedSlotsByDate = async (date: string): Promise<BlockedSlot[]> => {
+  const { data, error } = await supabase
+    .from('blocked_slots')
+    .select('*')
+    .eq('date', date);
+
+  if (error) throw error;
+  return Array.isArray(data) ? data : [];
+};
+
+export const createBlockedSlot = async (
+  date: string,
+  timeSlot: string,
+  reason?: string
+): Promise<BlockedSlot | null> => {
+  const { data: { user } } = await supabase.auth.getUser();
+  
+  const { data, error } = await supabase
+    .from('blocked_slots')
+    .insert({
+      date,
+      time_slot: timeSlot,
+      reason: reason || null,
+      created_by: user?.id || null,
+    })
+    .select()
+    .maybeSingle();
+
+  if (error) throw error;
+  return data;
+};
+
+export const deleteBlockedSlot = async (id: string): Promise<void> => {
+  const { error } = await supabase
+    .from('blocked_slots')
+    .delete()
+    .eq('id', id);
+
+  if (error) throw error;
+};
+
+// Settings API
+export const getSettings = async (): Promise<Setting[]> => {
+  const { data, error } = await supabase
+    .from('settings')
+    .select('*')
+    .order('key', { ascending: true });
+
+  if (error) throw error;
+  return Array.isArray(data) ? data : [];
+};
+
+export const getSettingByKey = async (key: string): Promise<Setting | null> => {
+  const { data, error } = await supabase
+    .from('settings')
+    .select('*')
+    .eq('key', key)
+    .maybeSingle();
+
+  if (error) throw error;
+  return data;
+};
+
+export const updateSetting = async (key: string, value: string): Promise<Setting | null> => {
+  const { data: { user } } = await supabase.auth.getUser();
+  
+  const { data, error } = await supabase
+    .from('settings')
+    .update({
+      value,
+      updated_at: new Date().toISOString(),
+      updated_by: user?.id || null,
+    })
+    .eq('key', key)
+    .select()
+    .maybeSingle();
+
+  if (error) throw error;
+  return data;
 };

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -6,10 +6,12 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
+import { getSettingByKey } from '@/db/api';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
+  const [whatsappNumber, setWhatsappNumber] = useState('+919952274058');
   const { toast } = useToast();
 
   const [formData, setFormData] = useState({
@@ -18,6 +20,21 @@ export default function ContactPage() {
     phone: '',
     message: '',
   });
+
+  useEffect(() => {
+    loadWhatsAppNumber();
+  }, []);
+
+  const loadWhatsAppNumber = async () => {
+    try {
+      const setting = await getSettingByKey('whatsapp_number');
+      if (setting) {
+        setWhatsappNumber(setting.value);
+      }
+    } catch (error) {
+      console.error('Error loading WhatsApp number:', error);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +65,8 @@ export default function ContactPage() {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/919952274058?text=Hi, I would like to inquire about your services', '_blank');
+    const cleanNumber = whatsappNumber.replace(/[^0-9]/g, '');
+    window.open(`https://wa.me/${cleanNumber}?text=Hi, I would like to inquire about your services`, '_blank');
   };
 
   return (

@@ -85,3 +85,21 @@ export interface ContactFormData {
   phone: string;
   message: string;
 }
+
+export interface BlockedSlot {
+  id: string;
+  date: string;
+  time_slot: string;
+  reason: string | null;
+  created_at: string;
+  created_by: string | null;
+}
+
+export interface Setting {
+  id: string;
+  key: string;
+  value: string;
+  description: string | null;
+  updated_at: string;
+  updated_by: string | null;
+}

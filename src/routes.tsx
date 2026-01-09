@@ -11,6 +11,8 @@ import AdminAppointmentsPage from './pages/admin/AdminAppointmentsPage';
 import AdminReviewsPage from './pages/admin/AdminReviewsPage';
 import AdminContentPage from './pages/admin/AdminContentPage';
 import AdminUsersPage from './pages/admin/AdminUsersPage';
+import ManageSlots from './pages/admin/ManageSlots';
+import ManageSettings from './pages/admin/ManageSettings';
 
 interface RouteConfig {
   name: string;
@@ -87,6 +89,16 @@ const routes: RouteConfig[] = [
         name: 'Users',
         path: 'users',
         element: <AdminUsersPage />,
+      },
+      {
+        name: 'Manage Slots',
+        path: 'slots',
+        element: <ManageSlots />,
+      },
+      {
+        name: 'Settings',
+        path: 'settings',
+        element: <ManageSettings />,
       },
     ],
   },
