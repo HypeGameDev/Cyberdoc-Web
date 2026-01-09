@@ -14,6 +14,7 @@ export default function LoginPage() {
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [signupUsername, setSignupUsername] = useState('');
+  const [signupEmail, setSignupEmail] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -27,6 +28,11 @@ export default function LoginPage() {
   const validateUsername = (username: string): boolean => {
     const usernameRegex = /^[a-zA-Z0-9_]+$/;
     return usernameRegex.test(username);
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -72,7 +78,7 @@ export default function LoginPage() {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!signupUsername || !signupPassword || !confirmPassword) {
+    if (!signupUsername || !signupEmail || !signupPassword || !confirmPassword) {
       toast({
         title: 'Error',
         description: 'Please fill in all fields',
@@ -85,6 +91,15 @@ export default function LoginPage() {
       toast({
         title: 'Invalid Username',
         description: 'Username can only contain letters, numbers, and underscores',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (!validateEmail(signupEmail)) {
+      toast({
+        title: 'Invalid Email',
+        description: 'Please enter a valid email address',
         variant: 'destructive',
       });
       return;
@@ -109,7 +124,7 @@ export default function LoginPage() {
     }
 
     setIsLoading(true);
-    const { error } = await signUp(signupUsername, signupPassword);
+    const { error } = await signUp(signupUsername, signupEmail, signupPassword);
     setIsLoading(false);
 
     if (error) {
@@ -120,14 +135,9 @@ export default function LoginPage() {
       });
     } else {
       toast({
-        title: 'Success',
-        description: 'Account created successfully! You can now log in.',
+        title: 'Check Your Email',
+        description: 'We sent you a verification link. Please check your email to verify your account.',
       });
-      // Auto login after signup
-      const { error: loginError } = await signIn(signupUsername, signupPassword);
-      if (!loginError) {
-        navigate(from, { replace: true });
-      }
     }
   };
 
@@ -221,6 +231,21 @@ export default function LoginPage() {
                     />
                     <p className="text-xs text-muted-foreground">
                       Only letters, numbers, and underscores allowed
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-email">Email</Label>
+                    <Input
+                      id="signup-email"
+                      type="email"
+                      placeholder="your.email@example.com"
+                      value={signupEmail}
+                      onChange={(e) => setSignupEmail(e.target.value)}
+                      disabled={isLoading}
+                      required
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      We'll send you a verification link
                     </p>
                   </div>
                   <div className="space-y-2">

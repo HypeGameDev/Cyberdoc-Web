@@ -32,15 +32,16 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-cyan-500/30 bg-slate-900 backdrop-blur">
       <nav className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-3">
           <img 
             src="/cyberdoctor-logo.png" 
             alt="Cyberdoctor Computer & Laptop Service Center" 
             className="h-12 w-auto"
           />
+          <span className="text-xl font-bold text-white">CyberDoctor</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -49,8 +50,8 @@ export default function Header() {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
+              className={`text-sm font-medium transition-colors hover:text-cyan-400 ${
+                isActive(item.path) ? 'text-cyan-400' : 'text-white'
               }`}
             >
               {item.name}

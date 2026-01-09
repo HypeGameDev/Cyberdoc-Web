@@ -21,7 +21,7 @@ interface AuthContextType {
   profile: Profile | null;
   loading: boolean;
   signIn: (username: string, password: string) => Promise<{ error: Error | null }>;
-  signUp: (username: string, password: string) => Promise<{ error: Error | null }>;
+  signUp: (username: string, email: string, password: string) => Promise<{ error: Error | null }>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
 }
@@ -66,9 +66,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signInWithUsername = async (username: string, password: string) => {
     try {
-      const email = `${username}@miaoda.com`;
+      // First, get the email from the profiles table using the username
+      const { data: profileData, error: profileError } = await supabase
+        .from('profiles')
+        .select('email')
+        .eq('username', username)
+        .maybeSingle();
+
+      if (profileError || !profileData?.email) {
+        throw new Error('User not found');
+      }
+
       const { error } = await supabase.auth.signInWithPassword({
-        email,
+        email: profileData.email,
         password,
       });
 
@@ -79,9 +89,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const signUpWithUsername = async (username: string, password: string) => {
+  const signUpWithUsername = async (username: string, email: string, password: string) => {
     try {
-      const email = `${username}@miaoda.com`;
       const { error } = await supabase.auth.signUp({
         email,
         password,
@@ -89,6 +98,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           data: {
             username,
           },
+          emailRedirectTo: window.location.origin,
         },
       });
 

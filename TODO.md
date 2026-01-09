@@ -2,70 +2,44 @@
 
 ## Plan
 - [x] Step 1: Initialize Supabase and setup database schema (Completed)
-  - [x] Initialize Supabase project
-  - [x] Create database tables (appointments, reviews, services, site_content)
-  - [x] Create storage bucket for images
-  - [x] Setup authentication with user roles (admin/user)
-  - [x] Create RLS policies and helper functions
-  - [x] Insert initial service data
 - [x] Step 2: Setup design system and color palette (Completed)
-  - [x] Configure index.css with Deep Blue primary color (#1E3A8A)
-  - [x] Update tailwind.config.js with semantic tokens
-  - [x] Ensure proper contrast ratios for accessibility
 - [x] Step 3: Create core layout components (Completed)
-  - [x] Create Header/Navbar with sticky navigation
-  - [x] Create Footer with business info
-  - [x] Setup routing structure for all pages
 - [x] Step 4: Implement authentication system (Completed)
-  - [x] Update AuthContext for user management
-  - [x] Update RouteGuard for protected routes
-  - [x] Create Login page
-  - [x] Add login/logout UI in navbar
 - [x] Step 5: Create public-facing pages (Completed)
-  - [x] Home page with hero section and CTAs
-  - [x] Services page with pricing table
-  - [x] Appointment Booking page with form
-  - [x] Reviews page with testimonials and submission form
-  - [x] Contact page with map, contact info, and form
 - [x] Step 6: Create admin dashboard (Completed)
-  - [x] Admin layout with navigation
-  - [x] Manage Bookings page
-  - [x] Manage Reviews page
-  - [x] Manage Content page (edit text/images)
-  - [x] User Management page
 - [x] Step 7: Implement database API layer (Completed)
-  - [x] Create types in @/types/types.ts
-  - [x] Create API functions in @/db/api.ts
-  - [x] Implement CRUD operations for all entities
 - [x] Step 8: Add integrations and final touches (Completed)
-  - [x] WhatsApp chat widget
-  - [x] Google Maps embed
-  - [x] Click-to-call functionality
-  - [x] SEO meta tags
-  - [x] Image search and replacement
 - [x] Step 9: Run lint and fix all issues (Completed)
 - [x] Step 10: Add Cyberdoctor logo (Completed)
-  - [x] Download and save logo image
-  - [x] Update Header component with logo
-  - [x] Update Login page with logo
 - [x] Step 11: Implement dark cyber theme with animated background (Completed)
-  - [x] Create HexagonalBackground component with cursor interaction
-  - [x] Update HomePage with dark cyber styling
-  - [x] Update body background to dark gradient
-  - [x] Apply cyan/blue color scheme throughout
+- [x] Step 12: Update header styling and add email verification (Completed)
+  - [x] Make header background dark blue with white text
+  - [x] Add "CyberDoctor" text next to logo
+  - [x] Add email field to signup form
+  - [x] Enable email verification in Supabase
+  - [x] Update database trigger to handle email
+  - [x] Update AuthContext to support email in signup
+  - [x] Update signIn to fetch email from profiles table
+- [x] Step 13: Add About Us section with image slideshow (Completed)
+  - [x] Create gallery images array with 6 professional images
+  - [x] Implement carousel component for image slideshow
+  - [x] Style carousel with dark cyber theme
 
 ## Notes
 - Admin dashboard requires authentication
 - First registered user becomes admin automatically
 - Image uploads limited to 1MB with auto-compression
 - Using Supabase for all backend functionality
-- No API integrations available from api_match
-- Design uses Deep Blue (#1E3A8A) as primary color
+- Design uses Deep Blue (#1E3A8A) as primary color with cyan accents
 - Website is fully responsive (mobile-first approach)
 - All lint checks passed successfully
-- Images retrieved from image_search for professional appearance
-- Logo added to header and login page
+- Logo added to header and login page with "CyberDoctor" text
 - Dark cyber theme with animated hexagonal grid background
 - Hexagonal lines light up around cursor within 150px radius
 - Background uses dark blue gradient (#020617 to #0f172a)
 - Cyan accent colors (#38BDF8) for interactive elements
+- Header now has dark blue background (slate-900) with white text
+- Email verification enabled - users must verify email before login
+- About Us section includes 6-image carousel showcasing service center
+- Signup now requires username, email, and password
+- Email verification link sent to user's email upon registration

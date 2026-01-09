@@ -4,6 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Wrench, Cpu, HardDrive, Monitor, Star } from 'lucide-react';
 import HexagonalBackground from '@/components/ui/HexagonalBackground';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export default function HomePage() {
   const services = [
@@ -36,6 +43,33 @@ export default function HomePage() {
     'Genuine Parts',
     'Quick Turnaround',
     'Warranty on Repairs',
+  ];
+
+  const galleryImages = [
+    {
+      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/7c33059d-0dbd-408f-944f-e541ec29b44a.jpg',
+      alt: 'Computer repair service center workshop with professional technicians',
+    },
+    {
+      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/fe1b7edc-c44d-4cd2-a327-939c975bcf65.jpg',
+      alt: 'Technician repairing laptop computer',
+    },
+    {
+      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/39a6087d-e824-4290-a3da-c4d2a9b8abb0.jpg',
+      alt: 'Laptop motherboard chip level repair and BGA soldering',
+    },
+    {
+      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/639bc92d-0a89-45b2-bcb6-05cdea20ad69.jpg',
+      alt: 'Computer hardware diagnostic testing equipment',
+    },
+    {
+      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/b5f8c369-1c43-4de7-8a4b-91050e69f458.jpg',
+      alt: 'Data recovery and hard drive repair services',
+    },
+    {
+      url: 'https://miaoda-site-img.s3cdn.medo.dev/images/595362cd-3f45-44a4-9a61-91a86ad57113.jpg',
+      alt: 'Electronics repair workshop with professional tools',
+    },
   ];
 
   return (
@@ -153,6 +187,41 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section with Gallery */}
+      <section className="py-12 xl:py-20 relative z-10">
+        <div className="container px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl xl:text-4xl font-bold mb-4 text-white">About Us</h2>
+            <p className="text-cyan-100/70 max-w-2xl mx-auto">
+              Take a look inside our state-of-the-art service center where our expert technicians work with precision and care
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {galleryImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <Card className="border-slate-700/50 bg-slate-900/50 backdrop-blur-sm overflow-hidden">
+                        <CardContent className="p-0">
+                          <img
+                            src={image.url}
+                            alt={image.alt}
+                            className="w-full h-[400px] xl:h-[500px] object-cover"
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2 bg-slate-900/80 border-cyan-500/50 text-cyan-400 hover:bg-slate-800" />
+              <CarouselNext className="right-2 bg-slate-900/80 border-cyan-500/50 text-cyan-400 hover:bg-slate-800" />
+            </Carousel>
           </div>
         </div>
       </section>
