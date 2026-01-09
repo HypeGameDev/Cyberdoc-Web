@@ -4,13 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Wrench, Cpu, HardDrive, Monitor, Star } from 'lucide-react';
 import HexagonalBackground from '@/components/ui/HexagonalBackground';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
 
 export default function HomePage() {
   const services = [
@@ -43,33 +36,6 @@ export default function HomePage() {
     'Genuine Parts',
     'Quick Turnaround',
     'Warranty on Repairs',
-  ];
-
-  const galleryImages = [
-    {
-      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
-      alt: 'Cyberdoctor Computer and Laptop Service Center - Sales and Service at Your Doorstep',
-    },
-    {
-      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
-      alt: 'Computer, Laptop, Tablet, Gadgets Sales and Service - Cyberdoctor Saravanampatti',
-    },
-    {
-      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
-      alt: 'Expert Computer Repair Services - Contact 96883 07007 or 99420 90081',
-    },
-    {
-      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
-      alt: 'Cyberdoctor - 115A Sathy Main Road, Visuwasapuram, Coimbatore',
-    },
-    {
-      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
-      alt: 'Professional Computer and Laptop Sales & Service Center',
-    },
-    {
-      url: 'https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8t7f0ajbwj5s.png',
-      alt: 'Cyberdoctor - Your Trusted Computer Service Partner in Coimbatore',
-    },
   ];
 
   return (
@@ -187,41 +153,6 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Us Section with Gallery */}
-      <section className="py-12 xl:py-20 relative z-10">
-        <div className="container px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl xl:text-4xl font-bold mb-4 text-white">About Us</h2>
-            <p className="text-cyan-100/70 max-w-2xl mx-auto">
-              Take a look inside our state-of-the-art service center where our expert technicians work with precision and care
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {galleryImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="p-1">
-                      <Card className="border-slate-700/50 bg-slate-900/50 backdrop-blur-sm overflow-hidden">
-                        <CardContent className="p-0">
-                          <img
-                            src={image.url}
-                            alt={image.alt}
-                            className="w-full h-[400px] xl:h-[500px] object-cover"
-                          />
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-2 bg-slate-900/80 border-cyan-500/50 text-cyan-400 hover:bg-slate-800" />
-              <CarouselNext className="right-2 bg-slate-900/80 border-cyan-500/50 text-cyan-400 hover:bg-slate-800" />
-            </Carousel>
           </div>
         </div>
       </section>

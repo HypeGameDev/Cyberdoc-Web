@@ -32,6 +32,10 @@
   - [x] Replace logo in Header component
   - [x] Replace logo in LoginPage component
   - [x] Update logo URL to use new image
+- [x] Step 20: Remove slideshow/carousel section (Completed)
+  - [x] Remove About Us section with image carousel
+  - [x] Remove galleryImages array
+  - [x] Remove unused Carousel component imports
 
 ## Notes
 - Admin dashboard requires authentication
