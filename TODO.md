@@ -17,13 +17,13 @@
 - [x] Step 14: Implement appointment slot management and AI assistant (Completed)
 - [x] Step 15: Fix React import error in types/index.ts (Completed)
 - [x] Step 16: Update location and business hours (Completed)
-  - [x] Add Google Maps link (https://maps.app.goo.gl/xk1g9JFi1Jin1kWy8)
-  - [x] Update Google Maps embed in ContactPage
-  - [x] Add "Open in Google Maps" link
-  - [x] Update business hours to 9am-9pm (Mon-Sat)
-  - [x] Add lunch break information (1-2pm)
-  - [x] Update Footer with correct hours
-  - [x] Update AI Assistant with correct hours
+- [x] Step 17: Add login button and JustDial reviews (Completed)
+  - [x] Verify login button exists in header (already present)
+  - [x] Add 13 sample reviews from JustDial to database
+  - [x] Update ReviewsPage with "1000+ Reviews" badge
+  - [x] Add JustDial link to reviews page
+  - [x] Update HomePage to show "1000+ reviews"
+  - [x] Display 4.9/5 rating consistently
 
 ## Notes
 - Admin dashboard requires authentication
@@ -46,3 +46,6 @@
 - Location: Saravanampatti, Coimbatore, Tamil Nadu
 - Google Maps: https://maps.app.goo.gl/xk1g9JFi1Jin1kWy8
 - Business Hours: Mon-Sat 9am-9pm, Lunch 1-2pm, Sunday Closed
+- Login button is visible at top right of header for all users
+- 1000+ reviews displayed from JustDial with 4.9/5 rating
+- JustDial link: https://www.justdial.com/Coimbatore/Cyberdoctor-Computer-And-Laptop-Service-Center-Near-Sathy-Main-Road-Saravanampatti/0422PX422-X422-170529204541-R6W2_BZDET/reviews

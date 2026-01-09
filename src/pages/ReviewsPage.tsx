@@ -144,15 +144,30 @@ export default function ReviewsPage() {
       <section className="bg-gradient-to-br from-primary/10 via-background to-background py-12 xl:py-16">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <Badge variant="secondary">Customer Reviews</Badge>
+            <div className="flex items-center justify-center gap-2 flex-wrap">
+              <Badge variant="secondary">Customer Reviews</Badge>
+              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/30">
+                1000+ Reviews on JustDial
+              </Badge>
+            </div>
             <h1 className="text-3xl xl:text-5xl font-bold">What Our Customers Say</h1>
             <div className="flex items-center justify-center space-x-2 text-2xl">
-              <div className="flex">{renderStars(Number(calculateAverageRating()))}</div>
-              <span className="font-bold">{calculateAverageRating()}/5</span>
+              <div className="flex">{renderStars(4.9)}</div>
+              <span className="font-bold">4.9/5</span>
             </div>
             <p className="text-base xl:text-xl text-muted-foreground">
-              Based on {reviews.length} reviews from satisfied customers
+              Based on 1000+ reviews from satisfied customers across Coimbatore
             </p>
+            <div className="pt-2">
+              <a
+                href="https://www.justdial.com/Coimbatore/Cyberdoctor-Computer-And-Laptop-Service-Center-Near-Sathy-Main-Road-Saravanampatti/0422PX422-X422-170529204541-R6W2_BZDET/reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-primary hover:underline"
+              >
+                View all reviews on JustDial →
+              </a>
+            </div>
           </div>
         </div>
       </section>

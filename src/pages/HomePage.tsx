@@ -174,7 +174,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-semibold text-white">4.9/5 Rating</h3>
                 <p className="text-cyan-100/60">
-                  Highly rated by hundreds of satisfied customers
+                  1000+ reviews from satisfied customers
                 </p>
               </div>
               <div className="text-center space-y-3">
