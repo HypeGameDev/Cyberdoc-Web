@@ -37,7 +37,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3">
           <img 
-            src="/cyberdoctor-logo.png" 
+            src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8tfbpsf3llog.png" 
             alt="Cyberdoctor Computer & Laptop Service Center" 
             className="h-12 w-auto"
           />

@@ -147,7 +147,7 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <Link to="/" className="inline-block">
             <img 
-              src="/cyberdoctor-logo.png" 
+              src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8k8acfg8q134/conv-8k8ae6le0c8w/20260109/file-8tfbpsf3llog.png" 
               alt="Cyberdoctor Computer & Laptop Service Center" 
               className="h-24 w-auto mx-auto mb-2"
             />
