@@ -15,7 +15,6 @@ import { useState } from 'react';
 const navigation = [
   { name: 'Home', path: '/' },
   { name: 'Services', path: '/services' },
-  { name: 'Book Appointment', path: '/booking' },
   { name: 'Reviews', path: '/reviews' },
   { name: 'Contact', path: '/contact' },
 ];
